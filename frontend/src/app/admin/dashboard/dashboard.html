@@ -1,0 +1,60 @@
+<div class="min-h-screen flex bg-gray-100">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow-lg hidden md:block">
+    <div class="p-6 border-b">
+      <h1 class="text-2xl font-bold text-indigo-600">Admin Panel</h1>
+    </div>
+    <nav class="mt-4">
+      <a routerLink="/admin/dashboard" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100">Dashboard</a>
+      <a routerLink="/admin/jobs" class="block px-6 py-3 text-gray-700 hover:bg-indigo-100">Job Listings</a>
+      <button (click)="logout()" class="block px-6 py-3 text-sm text-red-600 hover:underline">Logout</button>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6">
+    <div class="mb-6">
+      <h2 class="text-3xl font-bold text-gray-800">Manage Job Listings</h2>
+      <p class="text-sm text-gray-500">Connected to Spring Boot backend</p>
+    </div>
+
+    <!-- Add Job Form -->
+    <div class="bg-white p-4 rounded shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Add New Job</h3>
+      <form (ngSubmit)="addJob()" class="grid md:grid-cols-2 gap-4">
+        <input [(ngModel)]="newJob.title" name="title" placeholder="Job Title" class="p-2 border rounded w-full" required />
+        <input [(ngModel)]="newJob.company" name="company" placeholder="Company" class="p-2 border rounded w-full" required />
+        <input [(ngModel)]="newJob.location" name="location" placeholder="Location" class="p-2 border rounded w-full" required />
+        <input [(ngModel)]="newJob.salary" name="salary" placeholder="Salary" class="p-2 border rounded w-full" required />
+        <button type="submit" class="col-span-2 bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add Job</button>
+      </form>
+    </div>
+
+    <!-- Job Table -->
+    <div class="bg-white p-6 rounded shadow">
+      <h4 class="text-lg font-semibold text-gray-700 mb-4">Job Listings</h4>
+      <table class="w-full text-sm text-left">
+        <thead class="text-xs uppercase text-gray-500 border-b">
+          <tr>
+            <th class="py-2">Title</th>
+            <th class="py-2">Company</th>
+            <th class="py-2">Location</th>
+            <th class="py-2">Salary</th>
+            <th class="py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let job of jobs" class="hover:bg-gray-50">
+            <td class="py-2">{{ job.title }}</td>
+            <td class="py-2">{{ job.company }}</td>
+            <td class="py-2">{{ job.location }}</td>
+            <td class="py-2">{{ job.salary }}</td>
+            <td class="py-2">
+              <button class="text-red-500 hover:underline" (click)="deleteJob(job.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
