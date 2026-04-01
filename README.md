@@ -9,11 +9,7 @@
 
 > 🤖 A smart AI-powered job recommendation system that analyzes candidate resumes and matches them with the best job listings using TF-IDF, Cosine Similarity, and OpenAI's Embedding Models.
 
----
 
-📽️ **[Click to watch the Demo](https://www.linkedin.com/in/vinod-rajapaksha/)**
-
----
 
 ## 🌟 Features
 
@@ -160,17 +156,8 @@ Visit: [http://localhost:4200](http://localhost:4200)
 
 ---
 
-## 👨‍💻 Author
 
-👨‍💻 **Vinod Rajapaksha**  
-📧 vinodrajapaksha.dev@gmail.com  
-🌐 [LinkedIn](https://www.linkedin.com/in/vinod-rajapaksha) | [GitHub](https://github.com/Vinod-Rajapaksha)
 
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
